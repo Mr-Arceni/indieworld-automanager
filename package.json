@@ -1,0 +1,14 @@
+{
+  "name": "indieworld-automanager",
+  "version": "0.1.0a",
+  "description": "An private discord bot for \"Инди-мир\" discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Arseny Nikitin",
+  "license": "GNU AGPLv3",
+  "private": true,
+  "type": "commonjs"
+}
