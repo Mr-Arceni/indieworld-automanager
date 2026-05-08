@@ -4,7 +4,9 @@
   "description": "An private discord bot for \"Инди-мир\" discord server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node --esm src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js"
   },
   "keywords": [],
   "author": "Arseny Nikitin",
@@ -12,11 +14,11 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "discord.js": "^14.26.3"
+    "discord.js": "^14.26.3",
+    "dotenv": "^17.4.2"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "dotenv": "^17.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   }
