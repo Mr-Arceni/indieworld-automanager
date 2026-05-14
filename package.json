@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node --esm src/index.ts",
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "deploy commands": "ts-node --esm tools/deploy-commands.ts"
   },
   "keywords": [],
   "author": "Arseny Nikitin",
