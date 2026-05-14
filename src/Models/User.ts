@@ -1,4 +1,4 @@
-import { Infraction } from './Infraction.js';
+import type { Infraction } from './Infraction.js';
 import { Reputation } from './Reputation.js';
 
 class User {
