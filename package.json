@@ -1,7 +1,7 @@
 {
   "name": "indieworld-automanager",
   "version": "0.1.0a",
-  "description": "An private discord bot for \"Инди-мир\" discord server",
+  "description": "A private Discord bot for \"Инди-мир\" Discord server",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node --esm src/index.ts",
