@@ -10,4 +10,4 @@ clientId="<Discord Bot Client ID>"
 guildId="<Discord Server ID>"
 ```
 
-When added or deleted or command name changed, run tools/deploy-commands.ts scrypt to update/register slash commands
+When commands are added/deleted or command name changed, run tools/deploy-commands.ts script to update/register slash commands
