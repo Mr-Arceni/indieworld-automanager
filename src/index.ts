@@ -16,8 +16,8 @@ const client = new Client({
 client.commands = new Collection();
 
 const cmdPath = path.join(import.meta.dirname, 'Commands');
-const cmdUrl = pathToFileURL(cmdPath);
-const cmdFiles = fs.readdirSync(cmdUrl);
+const cmdFiles = fs.readdirSync(cmdPath);
+
 
 // Searching for command files in ./Commands and adding them to client.commands
 for (const file of cmdFiles) {
