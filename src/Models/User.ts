@@ -7,12 +7,14 @@ class User {
     public LastActiveWeek: Date;
     public ActiveWeeks: number;
     public Infractions: Array<Infraction>;
-
+    public Twinks: Array<string>;
+  
     public constructor(id: string) {
         this.id = id;
         this.Reputation = new Reputation();
         this.LastActiveWeek = new Date();
         this.ActiveWeeks = 0;
         this.Infractions = new Array<Infraction>();
+        this.Twinks = new Array<string>();
     }
 }
