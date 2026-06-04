@@ -1,10 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
-import * as dotenv from 'dotenv';
+import { config as configDotenv } from 'dotenv';
 import {Client, Collection, Events, GatewayIntentBits, MessageFlags} from 'discord.js';
 import { pathToFileURL } from "node:url";
 
-dotenv.config();
+configDotenv();
 const TOKEN = process.env.TOKEN;
 if (!TOKEN) {
     throw new Error('TOKEN is missing: not defined in environment variables or in .env file');
