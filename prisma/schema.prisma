@@ -1,10 +1,10 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -15,7 +15,7 @@ model User {
   lastActiveWeek         String?
   activeWeeks            Int          @default(0)
   infractions            Infraction[]
-  Twinks                 User[]
+  Twinks                 String[]
 }
 
 model Violation {
@@ -29,20 +29,8 @@ model Violation {
 model Infraction {
   id          String    @id @default(uuid())
   createdAt   DateTime  @default(now())
-  user        User      @relation(
-                            fields: [userId],
-                            references: [id],
-                            onDelete: Cascade
-                        )
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId      String
-  violation   Violation @relation(
-                            fields: [violationId],
-                            references: [id],
-                            onDelete: Restrict
-                        )
+  violation   Violation @relation(fields: [violationId], references: [id], onDelete: Restrict)
   violationId Int
-}
-
-model Punishment {
-
 }
