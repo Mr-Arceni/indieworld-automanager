@@ -1,13 +1,48 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                     String       @id
+  // Reputation merged with User model
+  score                  Int          @default(10)
+  lastChange             DateTime     @default(now())
+  lastActiveWeek         String?
+  activeWeeks            Int          @default(0)
+  infractions            Infraction[]
+  Twinks                 User[]
+}
+
+model Violation {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique
+  description String?
+  weight      Int
+  infractions Infraction[]
+}
+
+model Infraction {
+  id          String    @id @default(uuid())
+  createdAt   DateTime  @default(now())
+  user        User      @relation(
+                            fields: [userId],
+                            references: [id],
+                            onDelete: Cascade
+                        )
+  userId      String
+  violation   Violation @relation(
+                            fields: [violationId],
+                            references: [id],
+                            onDelete: Restrict
+                        )
+  violationId Int
+}
+
+model Punishment {
+
 }

@@ -1,11 +1,13 @@
-import type {Violation} from "./Violation.js";
+// TODO: Depricated since prisma\schema.prisma is defined
+
+import type { Violation } from "./Violation.js";
 
 export class Infraction {
-    public ViolationType: Violation;
-    public CreatedAt: Date;
+  public ViolationType: Violation;
+  public CreatedAt: Date;
 
-    public constructor(ViolationType: Violation) {
-        this.ViolationType = ViolationType;
-        this.CreatedAt = new Date();
-    }
+  public constructor(ViolationType: Violation) {
+    this.ViolationType = ViolationType;
+    this.CreatedAt = new Date();
+  }
 }
